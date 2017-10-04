@@ -1,0 +1,3 @@
+rootProject.name = 'oneThousandChallenge'
+
+include ':app'
