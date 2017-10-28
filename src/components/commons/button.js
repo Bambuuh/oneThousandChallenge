@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import { iconPrimary, accentColor } from '../../colorTheme';
+import { colors, baseline } from '../../styles';
 
 const Button = ({ onPress, children, style }) => {
     return (
@@ -18,12 +18,12 @@ const Button = ({ onPress, children, style }) => {
 
 const styles = {
     buttonStyle: {
-        backgroundColor: accentColor,
-        padding: 10,
+        backgroundColor: colors.accentColor,
+        padding: baseline,
         borderRadius: 3,
     },
     textStyle: {
-        color: iconPrimary
+        color: colors.iconPrimary
     }
 }
 

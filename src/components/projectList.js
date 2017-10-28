@@ -2,19 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { darkPrimary, iconPrimary } from '../colorTheme';
+import { colors } from '../styles';
 import { Button } from './commons';
 
 class ProjectList extends Component {
 
     renderProjects() {
-        const { projects } = this.props;
+        const { projects, navigation } = this.props;
         if (projects.length === 0) {
             return (
                 <View>
                     <Text>You don't seem to have any projects yet</Text>
                     <Text>How about creating one?</Text>
-                    <Button style={styles.buttonStyle}>Create Project</Button>
+                    <Button
+                        onPress={() => navigation.navigate('CreateProject')}
+                        style={styles.buttonStyle}
+                    >Create Project</Button>
                 </View>
             )
         }
@@ -42,8 +45,8 @@ const styles = {
 
 ProjectList.navigationOptions = {
     title: 'Projects',
-    headerTitleStyle: { color: iconPrimary },
-    headerStyle: { backgroundColor: darkPrimary }
+    headerTitleStyle: { color: colors.iconPrimary },
+    headerStyle: { backgroundColor: colors.darkPrimary }
 }
 
 const mapStateToProps = ({ projects }) => ({ projects });
